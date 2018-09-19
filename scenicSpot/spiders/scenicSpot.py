@@ -13,16 +13,19 @@ class scenicSpotSpider(scrapy.Spider):
     allowed_domins = ["http://piao.qunar.com"]
     start_urls = []
     handle_httpstatus_list = [404,500]
-
+    contrise = ['日本','韩国','泰国','马来西亚','新加坡','印度','越南','俄罗斯','美国','英国','法国','德国','奥地利','瑞士','荷兰','西班牙','葡萄牙','巴西','埃及']
     def after_404(self, response):
         print response.url
     def start_requests(self):
         global headers
-        home_url = 'http://piao.qunar.com/ticket/list.htm?keyword=中国'
-        for i in range(1000):
-            url = home_url+'&page=%s' %(str(i))#
-            self.start_urls.append(url)
-        print self.start_urls 
+        home_url = 'http://piao.qunar.com/ticket/list.htm?'
+        tail_url = '&region=&from=mpl_search_suggest&sort=pp'
+        for contry in self.contrise:
+            for i in range(5):
+                fore_url = home_url+'keyword=%s' %(contry)
+                back_url = tail_url + '&page=%s' %(str(i))
+                url = fore_url + back_url
+                self.start_urls.append(url)
         for url in self.start_urls:
             yield scrapy.Request(url,callback=self.parse)
 
