@@ -9,7 +9,7 @@ import codecs
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-class FangjiaPipeline(object):
+class scenicSpotPipeline(object):
     def process_item(self, item, spider):
         return item
 class Csv_writer_Pipeline(object):

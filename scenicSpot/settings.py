@@ -9,13 +9,13 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'fangjia'
+BOT_NAME = 'scenicSpot'
 
-SPIDER_MODULES = ['fangjia.spiders']
-NEWSPIDER_MODULE = 'fangjia.spiders'
+SPIDER_MODULES = ['scenicSpot.spiders']
+NEWSPIDER_MODULE = 'scenicSpot.spiders'
 
 ITEM_PIPELINES = {
-	'fangjia.pipelines.FangjiaPipeline':300
+	'scenicSpot.pipelines.scenicSpotPipeline':300
 }
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -60,7 +60,7 @@ DEFAULT_REQUEST_HEADERS = {
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
     'scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware': None,
-    'fangjia.middlewares.RotateUserAgentMiddleware': 400,
+    'scenicSpot.middlewares.RotateUserAgentMiddleware': 400,
 }
 
 # Enable or disable extensions
@@ -72,8 +72,8 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'fangjia.pipelines.SomePipeline': None,
-    'fangjia.pipelines.Csv_writer_Pipeline': 400,
+    'scenicSpot.pipelines.SomePipeline': None,
+    'scenicSpot.pipelines.Csv_writer_Pipeline': 400,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

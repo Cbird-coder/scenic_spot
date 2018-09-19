@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 import urllib
 from ..items import SpotItem
 
-class fangjiaSpider(scrapy.Spider):
+class scenicSpotSpider(scrapy.Spider):
     name = "fangjia"
     allowed_domins = ["http://piao.qunar.com"]
     start_urls = []
