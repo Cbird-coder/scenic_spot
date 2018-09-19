@@ -19,7 +19,7 @@ class fangjiaSpider(scrapy.Spider):
     def start_requests(self):
         global headers
         home_url = 'http://piao.qunar.com/ticket/list.htm?keyword=中国'
-        for i in range(40):
+        for i in range(1000):
             url = home_url+'&page=%s' %(str(i))#
             self.start_urls.append(url)
         print self.start_urls 

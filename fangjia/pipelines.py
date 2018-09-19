@@ -22,7 +22,7 @@ class Csv_writer_Pipeline(object):
         self.file_obj = open(self.filename,'w')
         self.file_obj.write(codecs.BOM_UTF8)
         self.writer = csv.writer(self.file_obj)
-        self.writer.writerow([' ','name','districts','address'])
+        self.writer.writerow(['景点id','景点名称','景点区域','景点级别','景点热度','景点简介','景点经纬度','景点地址',])
 
     def process_item(self, item, spider):
         if len(item) > 0 :
