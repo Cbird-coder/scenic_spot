@@ -50,17 +50,17 @@ class scenicSpotSpider(scrapy.Spider):
                 else:
                     level=""
 
-                product_star_level=sight_item.find('span',attrs={'class':'product_star_level'})
+                product_star_level = sight_item.find('span',attrs={'class':'product_star_level'})
 
                 if product_star_level:
-                    product_star_level=product_star_level.text
+                    product_star_level = product_star_level.text
                 else:
-                    product_star_level=""
-                intro=sight_item.find('div',attrs={'class':'intro'})
+                    product_star_level = ""
+                intro = sight_item.find('div',attrs={'class':'intro'})
                 if intro:
-                    intro=intro['title']
+                    intro = intro['title']
                 else:
-                    intro=""
+                    intro = ""
                 districts = districts.replace("\n","")
                 name = name.replace("\n","")
                 data_id = data_id.replace("\n","")
